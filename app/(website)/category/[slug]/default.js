@@ -7,9 +7,6 @@ import Pagination from "@/components/blog/pagination";
 export default function Post(props) {
   const { loading, posts, category, detailCategory } = props;
 
-  console.log('detailCategory', detailCategory)
-  console.log('posts', posts)
-
   if (!loading && !category) {
     notFound();
   }
