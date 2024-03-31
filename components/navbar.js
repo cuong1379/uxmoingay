@@ -78,7 +78,7 @@ export default function Navbar(props) {
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block"> 
                       <Image
-                      src={'/logo.png'}
+                      src={'/logo-dark.png'}
                       width={112}
                       height={44}
                         alt="Logo"

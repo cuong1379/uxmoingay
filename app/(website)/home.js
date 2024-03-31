@@ -3,12 +3,14 @@ import Container from "@/components/container";
 import PostList from "@/components/postlist";
 
 export default function Post({ posts }) {
+  const twoPostUp = posts?.filter((x) => x?._id == '31b372d7-b989-4cae-96a3-32caffc4341e' || x?._id == '9d19d264-067e-482f-a29a-7a13383c3a52')
+  const resPosts = posts?.filter((x) => x?._id != '31b372d7-b989-4cae-96a3-32caffc4341e' && x?._id != '9d19d264-067e-482f-a29a-7a13383c3a52')
   return (
     <>
       {posts && (
         <Container>
           <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
-            {posts.slice(0, 2).map(post => (
+            {twoPostUp?.map(post => (
               <PostList
                 key={post._id}
                 post={post}
@@ -18,7 +20,7 @@ export default function Post({ posts }) {
             ))}
           </div>
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
-            {posts.slice(2, 14).map(post => (
+            {resPosts.slice(0, 12).map(post => (
               <PostList key={post._id} post={post} aspect="square" />
             ))}
           </div>
